@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Landing Page Kopi Arabica
  * Template Post Type: page
@@ -6,12 +7,17 @@
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Arabica Premium – Nikmatnya Tiada Tara</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Georgia', serif;
@@ -37,18 +43,22 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(180,100,30,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(180, 100, 30, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .hero-content { position: relative; z-index: 1; max-width: 700px; }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
 
         .badge {
             display: inline-block;
-            background: rgba(180,100,30,0.2);
+            background: rgba(180, 100, 30, 0.2);
             border: 1px solid #b4641e;
             color: #e8a060;
             padding: 6px 18px;
@@ -66,7 +76,9 @@
             margin-bottom: 16px;
         }
 
-        .hero h1 span { color: #e8a060; }
+        .hero h1 span {
+            color: #e8a060;
+        }
 
         .hero p {
             font-size: 1.1rem;
@@ -89,7 +101,11 @@
             margin-left: 8px;
         }
 
-        .price-note { font-size: 0.85rem; color: #a0845a; margin-bottom: 32px; }
+        .price-note {
+            font-size: 0.85rem;
+            color: #a0845a;
+            margin-bottom: 32px;
+        }
 
         .btn-cta {
             display: inline-block;
@@ -102,12 +118,12 @@
             cursor: pointer;
             border: none;
             transition: all 0.3s;
-            box-shadow: 0 8px 30px rgba(180,100,30,0.4);
+            box-shadow: 0 8px 30px rgba(180, 100, 30, 0.4);
         }
 
         .btn-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(180,100,30,0.6);
+            box-shadow: 0 12px 40px rgba(180, 100, 30, 0.6);
         }
 
         /* FEATURES */
@@ -127,14 +143,27 @@
         .feature-card {
             text-align: center;
             padding: 32px 24px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(180,100,30,0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(180, 100, 30, 0.2);
             border-radius: 16px;
         }
 
-        .feature-icon { font-size: 2.5rem; margin-bottom: 16px; }
-        .feature-card h3 { color: #e8a060; margin-bottom: 8px; font-size: 1.1rem; }
-        .feature-card p { color: #a0845a; font-size: 0.9rem; line-height: 1.6; }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            color: #e8a060;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            color: #a0845a;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
 
         /* SECTION TITLE */
         .section-title {
@@ -142,8 +171,15 @@
             margin-bottom: 48px;
         }
 
-        .section-title h2 { font-size: 2rem; color: #f5e6d3; margin-bottom: 8px; }
-        .section-title p { color: #a0845a; }
+        .section-title h2 {
+            font-size: 2rem;
+            color: #f5e6d3;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #a0845a;
+        }
 
         /* FORM */
         .form-section {
@@ -154,13 +190,15 @@
         .form-wrapper {
             max-width: 560px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(180,100,30,0.25);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(180, 100, 30, 0.25);
             border-radius: 24px;
             padding: 48px 40px;
         }
 
-        .form-group { margin-bottom: 20px; }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
         .form-group label {
             display: block;
@@ -170,14 +208,16 @@
             letter-spacing: 0.5px;
         }
 
-        .form-group label span { color: #e8a060; }
+        .form-group label span {
+            color: #e8a060;
+        }
 
         .form-group input,
         .form-group select {
             width: 100%;
             padding: 14px 18px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(180,100,30,0.3);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(180, 100, 30, 0.3);
             border-radius: 10px;
             color: #f5e6d3;
             font-size: 1rem;
@@ -186,15 +226,33 @@
             outline: none;
         }
 
+        /* Biar select sama kayak input lain (hilangkan native style + arrow custom) */
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 48px;
+            background-image: linear-gradient(45deg, transparent 50%, rgba(232, 160, 96, 0.95) 50%),
+                linear-gradient(135deg, rgba(232, 160, 96, 0.95) 50%, transparent 50%);
+            background-position: calc(100% - 22px) calc(50% - 2px),
+                calc(100% - 16px) calc(50% - 2px);
+            background-size: 6px 6px, 6px 6px;
+            background-repeat: no-repeat;
+        }
+
         .form-group input:focus,
         .form-group select:focus {
             border-color: #e8a060;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
 
-        .form-group input::placeholder { color: #6b5040; }
+        .form-group input::placeholder {
+            color: #6b5040;
+        }
 
-        .form-group select option { background: #1a0f0a; }
+        .form-group select option {
+            background: #1a0f0a;
+        }
 
         .form-row {
             display: grid;
@@ -214,15 +272,18 @@
             cursor: pointer;
             margin-top: 8px;
             transition: all 0.3s;
-            box-shadow: 0 6px 24px rgba(180,100,30,0.35);
+            box-shadow: 0 6px 24px rgba(180, 100, 30, 0.35);
         }
 
         .btn-submit:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 10px 32px rgba(180,100,30,0.55);
+            box-shadow: 0 10px 32px rgba(180, 100, 30, 0.55);
         }
 
-        .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
 
         /* ALERT */
         .alert {
@@ -234,15 +295,15 @@
         }
 
         .alert.success {
-            background: rgba(34,197,94,0.15);
-            border: 1px solid rgba(34,197,94,0.4);
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4);
             color: #86efac;
             display: block;
         }
 
         .alert.error {
-            background: rgba(239,68,68,0.15);
-            border: 1px solid rgba(239,68,68,0.4);
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
             color: #fca5a5;
             display: block;
         }
@@ -253,178 +314,188 @@
             padding: 32px;
             color: #5a3a25;
             font-size: 0.85rem;
-            border-top: 1px solid rgba(180,100,30,0.1);
+            border-top: 1px solid rgba(180, 100, 30, 0.1);
         }
 
         @media (max-width: 480px) {
-            .form-wrapper { padding: 32px 24px; }
-            .form-row { grid-template-columns: 1fr; }
+            .form-wrapper {
+                padding: 32px 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <div class="badge">&#9749; Edisi Terbatas</div>
-        <h1>Kopi <span>Arabica</span><br>Premium</h1>
-        <p>
-            Dipetik langsung dari perkebunan di ketinggian 1.500 mdpl.<br>
-            Cita rasa yang kaya, aroma yang memanjakan, kenikmatan yang tak terlupakan.
-        </p>
-        <div class="price-tag">
-            Rp 85.000 <small>Rp 120.000</small>
-        </div>
-        <p class="price-note">per 250gr &bull; Gratis ongkir untuk pemesanan &ge; 2 pack</p>
-        <a href="#pesan" class="btn-cta">&#9749; Pesan Sekarang</a>
-    </div>
-</section>
-
-<!-- KEUNGGULAN -->
-<section class="features">
-    <div class="section-title">
-        <h2>Mengapa Arabica Premium?</h2>
-        <p>Kualitas terbaik di setiap cangkir</p>
-    </div>
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon">🌿</div>
-            <h3>100% Organik</h3>
-            <p>Tanpa pestisida, tumbuh alami di tanah vulkanik yang subur.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🏔️</div>
-            <h3>Single Origin</h3>
-            <p>Biji kopi pilihan dari perkebunan Gayo, Aceh – high altitude.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">📦</div>
-            <h3>Freshly Roasted</h3>
-            <p>Diroasting setelah order masuk, dikirim dalam 24 jam.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">⭐</div>
-            <h3>Rating 4.9/5</h3>
-            <p>Lebih dari 2.000+ pelanggan puas di seluruh Indonesia.</p>
-        </div>
-    </div>
-</section>
-
-<!-- FORM PEMESANAN -->
-<section class="form-section" id="pesan">
-    <div class="section-title">
-        <h2>Form Pemesanan</h2>
-        <p>Isi data dengan lengkap, kami akan konfirmasi via WhatsApp</p>
-    </div>
-
-    <div class="form-wrapper">
-        <div class="alert" id="alert-box"></div>
-
-        <form id="order-form">
-            <div class="form-group">
-                <label>Nama Lengkap <span>*</span></label>
-                <input type="text" name="nama_pemesan" placeholder="Masukkan nama lengkap" required>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">&#9749; Edisi Terbatas</div>
+            <h1>Kopi <span>Arabica</span><br>Premium</h1>
+            <p>
+                Dipetik langsung dari perkebunan di ketinggian 1.500 mdpl.<br>
+                Cita rasa yang kaya, aroma yang memanjakan, kenikmatan yang tak terlupakan.
+            </p>
+            <div class="price-tag">
+                Rp 85.000 <small>Rp 120.000</small>
             </div>
+            <p class="price-note">per 250gr &bull; Gratis ongkir untuk pemesanan &ge; 2 pack</p>
+            <a href="#pesan" class="btn-cta">&#9749; Pesan Sekarang</a>
+        </div>
+    </section>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Nomor WhatsApp <span>*</span></label>
-                    <input type="tel" name="nomor_wa" placeholder="08xxxxxxxxxx" required>
-                </div>
-                <div class="form-group">
-                    <label>Email <span>*</span></label>
-                    <input type="email" name="email" placeholder="email@kamu.com" required>
-                </div>
+    <!-- KEUNGGULAN -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Mengapa Arabica Premium?</h2>
+            <p>Kualitas terbaik di setiap cangkir</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>100% Organik</h3>
+                <p>Tanpa pestisida, tumbuh alami di tanah vulkanik yang subur.</p>
             </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Produk <span>*</span></label>
-                    <select name="nama_produk" required>
-                        <option value="">Pilih produk</option>
-                        <option value="Kopi Arabica Premium 250gr" selected>Arabica Premium 250gr</option>
-                        <option value="Kopi Arabica Premium 500gr">Arabica Premium 500gr</option>
-                        <option value="Kopi Arabica Premium 1kg">Arabica Premium 1kg</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Jumlah (pack) <span>*</span></label>
-                    <input type="number" name="jumlah" placeholder="1" min="1" max="100" required>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏔️</div>
+                <h3>Single Origin</h3>
+                <p>Biji kopi pilihan dari perkebunan Gayo, Aceh – high altitude.</p>
             </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Freshly Roasted</h3>
+                <p>Diroasting setelah order masuk, dikirim dalam 24 jam.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Rating 4.9/5</h3>
+                <p>Lebih dari 2.000+ pelanggan puas di seluruh Indonesia.</p>
+            </div>
+        </div>
+    </section>
 
-            <button type="submit" class="btn-submit" id="btn-submit">
-                &#9749; Pesan Sekarang
-            </button>
-        </form>
-    </div>
-</section>
+    <!-- FORM PEMESANAN -->
+    <section class="form-section" id="pesan">
+        <div class="section-title">
+            <h2>Form Pemesanan</h2>
+            <p>Isi data dengan lengkap, kami akan konfirmasi via WhatsApp</p>
+        </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <p>&copy; <?php echo date('Y'); ?> Kopi Arabica Premium. Dibuat dengan ❤️ dan ☕</p>
-</footer>
+        <div class="form-wrapper">
+            <div class="alert" id="alert-box"></div>
 
-<script>
-document.getElementById('order-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
+            <form id="order-form">
+                <div class="form-group">
+                    <label>Nama Lengkap <span>*</span></label>
+                    <input type="text" name="nama_pemesan" placeholder="Masukkan nama lengkap" required>
+                </div>
 
-    const form = e.target;
-    const btn = document.getElementById('btn-submit');
-    const alertBox = document.getElementById('alert-box');
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nomor WhatsApp <span>*</span></label>
+                        <input type="tel" name="nomor_wa" placeholder="08xxxxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span>*</span></label>
+                        <input type="email" name="email" placeholder="email@kamu.com" required>
+                    </div>
+                </div>
 
-    // Reset alert
-    alertBox.className = 'alert';
-    alertBox.textContent = '';
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Produk <span>*</span></label>
+                        <select name="nama_produk" required>
+                            <option value="">Pilih produk</option>
+                            <option value="Kopi Arabica Premium 250gr" selected>Arabica Premium 250gr</option>
+                            <option value="Kopi Arabica Premium 500gr">Arabica Premium 500gr</option>
+                            <option value="Kopi Arabica Premium 1kg">Arabica Premium 1kg</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah (pack) <span>*</span></label>
+                        <input type="number" name="jumlah" placeholder="1" min="1" max="100" required>
+                    </div>
+                </div>
 
-    // Kumpulkan data form
-    const formData = new FormData(form);
-    const payload = {
-        nama_pemesan: formData.get('nama_pemesan').trim(),
-        nomor_wa:     formData.get('nomor_wa').trim(),
-        email:        formData.get('email').trim(),
-        nama_produk:  formData.get('nama_produk'),
-        jumlah:       parseInt(formData.get('jumlah')),
-    };
+                <button type="submit" class="btn-submit" id="btn-submit">
+                    &#9749; Pesan Sekarang
+                </button>
+            </form>
+        </div>
+    </section>
 
-    // Loading state
-    btn.disabled = true;
-    btn.textContent = 'Memproses...';
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; <?php echo date('Y'); ?> Kopi Arabica Premium. Dibuat dengan ❤️ dan ☕</p>
+    </footer>
 
-    try {
-        const response = await fetch('http://localhost:8000/api/orders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify(payload),
+    <script>
+        document.getElementById('order-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const btn = document.getElementById('btn-submit');
+            const alertBox = document.getElementById('alert-box');
+
+            // Reset alert
+            alertBox.className = 'alert';
+            alertBox.textContent = '';
+
+            // Kumpulkan data form
+            const formData = new FormData(form);
+            const payload = {
+                nama_pemesan: formData.get('nama_pemesan').trim(),
+                nomor_wa: formData.get('nomor_wa').trim(),
+                email: formData.get('email').trim(),
+                nama_produk: formData.get('nama_produk'),
+                jumlah: parseInt(formData.get('jumlah')),
+            };
+
+            // Loading state
+            btn.disabled = true;
+            btn.textContent = 'Memproses...';
+
+            try {
+                const response = await fetch('http://localhost:8000/api/orders', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alertBox.className = 'alert success';
+                    alertBox.textContent = '✅ Pesanan berhasil dikirim! Kami akan menghubungi kamu via WhatsApp segera.';
+                    form.reset();
+                } else {
+                    const errors = data.errors ?
+                        Object.values(data.errors).flat().join(' ') :
+                        (data.message || 'Terjadi kesalahan, coba lagi.');
+                    alertBox.className = 'alert error';
+                    alertBox.textContent = '❌ ' + errors;
+                }
+            } catch (err) {
+                alertBox.className = 'alert error';
+                alertBox.textContent = '❌ Tidak dapat terhubung ke server. Pastikan API Laravel sedang berjalan.';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '☕ Pesan Sekarang';
+                alertBox.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }
         });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alertBox.className = 'alert success';
-            alertBox.textContent = '✅ Pesanan berhasil dikirim! Kami akan menghubungi kamu via WhatsApp segera.';
-            form.reset();
-        } else {
-            const errors = data.errors
-                ? Object.values(data.errors).flat().join(' ')
-                : (data.message || 'Terjadi kesalahan, coba lagi.');
-            alertBox.className = 'alert error';
-            alertBox.textContent = '❌ ' + errors;
-        }
-    } catch (err) {
-        alertBox.className = 'alert error';
-        alertBox.textContent = '❌ Tidak dapat terhubung ke server. Pastikan API Laravel sedang berjalan.';
-    } finally {
-        btn.disabled = false;
-        btn.textContent = '☕ Pesan Sekarang';
-        alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-});
-</script>
+    </script>
 
 </body>
+
 </html>
